@@ -1,1 +1,10 @@
-
+<div style="padding:8px;background:#222;color:#fff;">
+  <b>LeaveMgmt</b> |
+  <a href="${pageContext.request.contextPath}/home" style="color:#fff;">Home</a> |
+  <a href="${pageContext.request.contextPath}/request/create" style="color:#fff;">T?o ??n</a> |
+  <a href="${pageContext.request.contextPath}/request/list" style="color:#fff;">??n c?a tôi</a> |
+  <a href="${pageContext.request.contextPath}/manager/requests" style="color:#fff;">Duy?t (TL/TP)</a> |
+  <a href="${pageContext.request.contextPath}/agenda" style="color:#fff;">Agenda phòng</a> |
+  <a href="${pageContext.request.contextPath}/balance" style="color:#fff;">S? d? phép</a> |
+  <a href="${pageContext.request.contextPath}/logout" style="color:#fff;">??ng xu?t</a>
+</div>
