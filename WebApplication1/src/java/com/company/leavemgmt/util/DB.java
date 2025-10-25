@@ -1,13 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.company.leavemgmt.util;
 
-/**
- *
- * @author hp
- */
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 public class DB {
-    
+    static {
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        } catch (Exception ex) {
+            throw new RuntimeException("Load SQLServer JDBC driver failed", ex);
+        }
+    }
+    public static Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(
+                Config.getDbUrl(), Config.getDbUser(), Config.getDbPassword());
+    }
+    public static boolean isDemoIgnorePassword() {
+        return Config.isDemoIgnorePassword();
+    }
 }

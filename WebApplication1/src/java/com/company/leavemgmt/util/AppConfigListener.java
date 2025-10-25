@@ -1,13 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.company.leavemgmt.util;
 
-/**
- *
- * @author hp
- */
-public class AppConfigListener {
-    
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletContextEvent;
+import jakarta.servlet.ServletContextListener;
+
+public class AppConfigListener implements ServletContextListener {
+    @Override
+    public void contextInitialized(ServletContextEvent sce) {
+        ServletContext ctx = sce.getServletContext();
+        String url  = ctx.getInitParameter("db.url");
+        String user = ctx.getInitParameter("db.user");
+        String pass = ctx.getInitParameter("db.password");
+        String ignore = ctx.getInitParameter("security.demo.ignorePassword");
+        boolean ignorePw = (ignore == null) ? true : Boolean.parseBoolean(ignore);
+        Config.init(url, user, pass, ignorePw);
+    }
 }
