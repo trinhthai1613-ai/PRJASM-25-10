@@ -3,7 +3,7 @@ package com.company.leavemgmt.util;
 public final class Config {
     private static String dbUrl  = "jdbc:sqlserver://localhost:1433;databaseName=LeaveManagementDB;encrypt=false;trustServerCertificate=true;";
     private static String dbUser = "sa";
-    private static String dbPass = "YourStrong!Passw0rd";
+    private static String dbPass = "123456";
     private static boolean demoIgnorePassword = true;
 
     private Config(){}
